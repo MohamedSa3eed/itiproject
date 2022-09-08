@@ -5,13 +5,13 @@
  * 1- 8-PINS
  * 2- 4-PINS
  */
-#define CONNECTION  _8_PINS
+#define CONNECTION  _4_PINS
 
-#define GPORT PORTB
-#define RS PIN1 //GPORT
-#define EN PIN2 //GPORT
-#define RW PIN3 //GPORT
-#define LCD_PORT PORTA
+#define GPORT 		PORTB
+#define RS 			DIO_PIN1 //GPORT
+#define EN 			DIO_PIN2 //GPORT
+#define RW 			DIO_PIN7 //GPORT
+#define LCD_PORT 	PORTA
 
  //commands to write in LCD 
 

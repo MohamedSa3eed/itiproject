@@ -1,18 +1,17 @@
-#include </usr/avr/include/avr/delay.h>
 #include "../../LIB/STD_TYPES.h"
 #include "../../LIB/BIT_MATH.h"
 #include "../../MCAL/DIO/DIO_INTERFACE.h"
 #include "LCD_INTERFACE.h"
 #include "LCD_CONFIG.h"
 #include "LCD_PRIVATE.h"
-
+#include "avr/delay.h"
 #if CONNECTION == _8_PINS
 void LCD_Init(void)
 {
-	DIO_SetPinDiriction(GPORT,RS,OUTPUT);
-	DIO_SetPinDiriction(GPORT,EN,OUTPUT);
-	DIO_SetPinDiriction(GPORT,RW,OUTPUT);
-	DIO_SetPortDiriction(LCD_PORT,PORT_OUTPUT); //all high
+	DIO_SetPinDirection(GPORT,RS,DIO_OUTPUT);
+	DIO_SetPinDirection(GPORT,EN,DIO_OUTPUT);
+	DIO_SetPinDirection(GPORT,RW,DIO_OUTPUT);
+	DIO_SetPortDirection(LCD_PORT,0xff); //all DIO_HIGH
 	_delay_ms(100);  //delay from data sheet
 	LCD_WriteCommand(function_set_2Lines);
 	_delay_ms(1);
@@ -25,35 +24,35 @@ void LCD_Init(void)
 }
 void LCD_WriteCommand(u8 Command)
 {
-	DIO_SetPinValue(GPORT , RS ,LOW);  //RS
-	DIO_SetPinValue(GPORT , RW ,LOW);  //R/W 
-	DIO_SetPinValue(GPORT,EN,HIGH);
+	DIO_SetPinValue(GPORT , RS ,DIO_LOW);  //RS
+	DIO_SetPinValue(GPORT , RW ,DIO_LOW);  //R/W
+	DIO_SetPinValue(GPORT,EN,DIO_HIGH);
 	DIO_SetPortValue(LCD_PORT,Command);
 	_delay_ms(1);
-	DIO_SetPinValue(GPORT,EN,LOW);
+	DIO_SetPinValue(GPORT,EN,DIO_LOW);
 
 }
 void LCD_WriteData(u8 Data)
 {
-	DIO_SetPinValue(GPORT , RS ,HIGH);  //RS
-	DIO_SetPinValue(GPORT , RW ,LOW);  //R/W 
-	DIO_SetPinValue(GPORT,EN,HIGH);
+	DIO_SetPinValue(GPORT , RS ,DIO_HIGH);  //RS
+	DIO_SetPinValue(GPORT , RW ,DIO_LOW);  //R/W
+	DIO_SetPinValue(GPORT,EN,DIO_HIGH);
 	DIO_SetPortValue(LCD_PORT,Data);
 	_delay_ms(1);
-	DIO_SetPinValue(GPORT,EN,LOW);
+	DIO_SetPinValue(GPORT,EN,DIO_LOW);
 
 }
 #elif CONNECTION==_4_PINS
  u8 init_flag = 0;
 void LCD_Init(void)
 {
-	DIO_SetPinDiriction(GPORT,RS,OUTPUT);
-	DIO_SetPinDiriction(GPORT,RW,OUTPUT);
-	DIO_SetPinDiriction(GPORT,EN,OUTPUT);
-	DIO_SetPortDiriction(LCD_PORT,LAST_4OUTPUT);
+	DIO_SetPinDirection(GPORT,RS,DIO_OUTPUT);
+	DIO_SetPinDirection(GPORT,RW,DIO_OUTPUT);
+	DIO_SetPinDirection(GPORT,EN,DIO_OUTPUT);
+	DIO_SetPortDirection(LCD_PORT,LAST_4OUTPUT);
 	_delay_ms(100);
-	LCD_WriteCommand(function_set);
-	LCD_WriteCommand(function_set);
+	LCD_WriteCommand(0x20);
+	LCD_WriteCommand(0x20);
 	LCD_WriteCommand(function_set_2Lines);
 	init_flag =1 ;
 	_delay_ms(1);
@@ -67,48 +66,48 @@ void LCD_Init(void)
 
 void LCD_WriteCommand(u8 Command)
 {
-	DIO_SetPinValue(GPORT , RS ,LOW);  //RS
-	DIO_SetPinValue(GPORT , RW ,LOW);  //R/W 
-	DIO_SetPinValue(GPORT , EN ,HIGH);
-	DIO_SetPinValue(LCD_PORT ,PIN4 ,GET_BIT(Command,4));
-	DIO_SetPinValue(LCD_PORT ,PIN5 ,GET_BIT(Command,5));
-	DIO_SetPinValue(LCD_PORT ,PIN6 ,GET_BIT(Command,6));
-	DIO_SetPinValue(LCD_PORT ,PIN7 ,GET_BIT(Command,7));
+	DIO_SetPinValue(GPORT , RS ,DIO_LOW);  //RS
+	DIO_SetPinValue(GPORT , RW ,DIO_LOW);  //R/W
+	DIO_SetPinValue(GPORT , EN ,DIO_HIGH);
+	DIO_SetPinValue(LCD_PORT ,DIO_PIN4 ,GET_BIT(Command,4));
+	DIO_SetPinValue(LCD_PORT ,DIO_PIN5 ,GET_BIT(Command,5));
+	DIO_SetPinValue(LCD_PORT ,DIO_PIN6 ,GET_BIT(Command,6));
+	DIO_SetPinValue(LCD_PORT ,DIO_PIN7 ,GET_BIT(Command,7));
 	_delay_ms(1);
-	DIO_SetPinValue(GPORT,EN,LOW);
+	DIO_SetPinValue(GPORT,EN,DIO_LOW);
 	if(init_flag==1)
 	{
 	_delay_ms(1);
-	DIO_SetPinValue(GPORT , EN ,HIGH);
-	DIO_SetPinValue(LCD_PORT ,PIN4 ,GET_BIT(Command,0));
-	DIO_SetPinValue(LCD_PORT ,PIN5 ,GET_BIT(Command,1));
-	DIO_SetPinValue(LCD_PORT ,PIN6 ,GET_BIT(Command,2));
-	DIO_SetPinValue(LCD_PORT ,PIN7 ,GET_BIT(Command,3));
+	DIO_SetPinValue(GPORT , EN ,DIO_HIGH);
+	DIO_SetPinValue(LCD_PORT ,DIO_PIN4 ,GET_BIT(Command,0));
+	DIO_SetPinValue(LCD_PORT ,DIO_PIN5 ,GET_BIT(Command,1));
+	DIO_SetPinValue(LCD_PORT ,DIO_PIN6 ,GET_BIT(Command,2));
+	DIO_SetPinValue(LCD_PORT ,DIO_PIN7 ,GET_BIT(Command,3));
 	_delay_ms(1);
-	DIO_SetPinValue(GPORT,EN,LOW);
+	DIO_SetPinValue(GPORT,EN,DIO_LOW);
         _delay_ms(2);
 	}
 }
 
 void LCD_WriteData(u8 Data)
 {
-	DIO_SetPinValue(GPORT , RS ,HIGH);  //RS
-	DIO_SetPinValue(GPORT , RW ,LOW);  //R/W 
-	DIO_SetPinValue(GPORT , EN ,HIGH);
-	DIO_SetPinValue(LCD_PORT ,PIN4 ,GET_BIT(Data,4));
-	DIO_SetPinValue(LCD_PORT ,PIN5 ,GET_BIT(Data,5));
-	DIO_SetPinValue(LCD_PORT ,PIN6 ,GET_BIT(Data,6));
-	DIO_SetPinValue(LCD_PORT ,PIN7 ,GET_BIT(Data,7));
+	DIO_SetPinValue(GPORT , RS ,DIO_HIGH);  //RS
+	DIO_SetPinValue(GPORT , RW ,DIO_LOW);  //R/W
+	DIO_SetPinValue(GPORT , EN ,DIO_HIGH);
+	DIO_SetPinValue (LCD_PORT ,DIO_PIN4 ,GET_BIT(Data,4));
+	DIO_SetPinValue (LCD_PORT ,DIO_PIN5 ,GET_BIT(Data,5));
+	DIO_SetPinValue (LCD_PORT ,DIO_PIN6 ,GET_BIT(Data,6));
+	DIO_SetPinValue (LCD_PORT ,DIO_PIN7 ,GET_BIT(Data,7));
 	_delay_ms(1);
-	DIO_SetPinValue(GPORT,EN,LOW);
+	DIO_SetPinValue(GPORT,EN,DIO_LOW);
 	_delay_ms(1);
-	DIO_SetPinValue(GPORT , EN ,HIGH);
-	DIO_SetPinValue(LCD_PORT ,PIN4 ,GET_BIT(Data,0));
-	DIO_SetPinValue(LCD_PORT ,PIN5 ,GET_BIT(Data,1));
-	DIO_SetPinValue(LCD_PORT ,PIN6 ,GET_BIT(Data,2));
-	DIO_SetPinValue(LCD_PORT ,PIN7 ,GET_BIT(Data,3));
+	DIO_SetPinValue(GPORT , EN ,DIO_HIGH);
+	DIO_SetPinValue(LCD_PORT ,DIO_PIN4 ,GET_BIT(Data,0));
+	DIO_SetPinValue(LCD_PORT ,DIO_PIN5 ,GET_BIT(Data,1));
+	DIO_SetPinValue(LCD_PORT ,DIO_PIN6 ,GET_BIT(Data,2));
+	DIO_SetPinValue(LCD_PORT ,DIO_PIN7 ,GET_BIT(Data,3));
 	_delay_ms(1);
-	DIO_SetPinValue(GPORT,EN,LOW);
+	DIO_SetPinValue(GPORT,EN,DIO_LOW);
         _delay_ms(2);
 }
 

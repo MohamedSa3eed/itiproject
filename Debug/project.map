@@ -167,7 +167,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000     0x5812
+.text           0x0000000000000000     0x61b2
  *(.vectors)
  .vectors       0x0000000000000000       0x54 /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/crtatmega32.o
                 0x0000000000000000                __vectors
@@ -332,214 +332,214 @@ END GROUP
                 0x000000000000132a     0x11f6 ./HAL/STEPPER/STEPPER_PROGRAM.o
                 0x000000000000132a                STEPPER_HalfStep
  .text.LCD_Init
-                0x0000000000002520      0x59a ./HAL/LCD/LCD_PROGRAM.o
+                0x0000000000002520      0x5ac ./HAL/LCD/LCD_PROGRAM.o
                 0x0000000000002520                LCD_Init
  .text.LCD_WriteCommand
-                0x0000000000002aba      0x178 ./HAL/LCD/LCD_PROGRAM.o
-                0x0000000000002aba                LCD_WriteCommand
+                0x0000000000002acc      0x636 ./HAL/LCD/LCD_PROGRAM.o
+                0x0000000000002acc                LCD_WriteCommand
  .text.LCD_WriteData
-                0x0000000000002c32      0x178 ./HAL/LCD/LCD_PROGRAM.o
-                0x0000000000002c32                LCD_WriteData
+                0x0000000000003102      0x62c ./HAL/LCD/LCD_PROGRAM.o
+                0x0000000000003102                LCD_WriteData
  .text.LCD_WriteString
-                0x0000000000002daa       0x56 ./HAL/LCD/LCD_PROGRAM.o
-                0x0000000000002daa                LCD_WriteString
+                0x000000000000372e       0x56 ./HAL/LCD/LCD_PROGRAM.o
+                0x000000000000372e                LCD_WriteString
  .text.LCD_GoToXY
-                0x0000000000002e00       0x3e ./HAL/LCD/LCD_PROGRAM.o
-                0x0000000000002e00                LCD_GoToXY
+                0x0000000000003784       0x3e ./HAL/LCD/LCD_PROGRAM.o
+                0x0000000000003784                LCD_GoToXY
  .text.LCD_WriteDigits
-                0x0000000000002e3e      0x192 ./HAL/LCD/LCD_PROGRAM.o
-                0x0000000000002e3e                LCD_WriteDigits
+                0x00000000000037c2      0x192 ./HAL/LCD/LCD_PROGRAM.o
+                0x00000000000037c2                LCD_WriteDigits
  .text.LCD_WriteSpecial
-                0x0000000000002fd0       0x80 ./HAL/LCD/LCD_PROGRAM.o
-                0x0000000000002fd0                LCD_WriteSpecial
+                0x0000000000003954       0x80 ./HAL/LCD/LCD_PROGRAM.o
+                0x0000000000003954                LCD_WriteSpecial
  .text.KPD_GetPressedKey
-                0x0000000000003050      0x13a ./HAL/KPD/KPD_PROGRAM.o
-                0x0000000000003050                KPD_GetPressedKey
- .text.main     0x000000000000318a       0xa0 ./APP/main.o
-                0x000000000000318a                main
- .text.Login    0x000000000000322a     0x1a14 ./APP/main.o
-                0x000000000000322a                Login
+                0x00000000000039d4      0x13a ./HAL/KPD/KPD_PROGRAM.o
+                0x00000000000039d4                KPD_GetPressedKey
+ .text.main     0x0000000000003b0e       0xa0 ./APP/main.o
+                0x0000000000003b0e                main
+ .text.Login    0x0000000000003bae     0x1a14 ./APP/main.o
+                0x0000000000003bae                Login
  .text.checkUser1Pass
-                0x0000000000004c3e      0x1aa ./APP/main.o
-                0x0000000000004c3e                checkUser1Pass
+                0x00000000000055c2      0x1aa ./APP/main.o
+                0x00000000000055c2                checkUser1Pass
  .text.checkUser2Pass
-                0x0000000000004de8      0x1aa ./APP/main.o
-                0x0000000000004de8                checkUser2Pass
+                0x000000000000576c      0x1aa ./APP/main.o
+                0x000000000000576c                checkUser2Pass
  .text.checkUser3Pass
-                0x0000000000004f92      0x1aa ./APP/main.o
-                0x0000000000004f92                checkUser3Pass
- .text.options  0x000000000000513c       0x7a ./APP/main.o
-                0x000000000000513c                options
+                0x0000000000005916      0x1aa ./APP/main.o
+                0x0000000000005916                checkUser3Pass
+ .text.options  0x0000000000005ac0       0x96 ./APP/main.o
+                0x0000000000005ac0                options
  .text.getOption
-                0x00000000000051b6       0x22 ./APP/main.o
-                0x00000000000051b6                getOption
- .text.getPass  0x00000000000051d8      0x1e4 ./APP/main.o
-                0x00000000000051d8                getPass
- .text.room1On  0x00000000000053bc       0x1a ./APP/main.o
-                0x00000000000053bc                room1On
+                0x0000000000005b56       0x22 ./APP/main.o
+                0x0000000000005b56                getOption
+ .text.getPass  0x0000000000005b78      0x1e4 ./APP/main.o
+                0x0000000000005b78                getPass
+ .text.room1On  0x0000000000005d5c       0x1a ./APP/main.o
+                0x0000000000005d5c                room1On
  .text.room1Off
-                0x00000000000053d6       0x1a ./APP/main.o
-                0x00000000000053d6                room1Off
- .text.room2On  0x00000000000053f0       0x1a ./APP/main.o
-                0x00000000000053f0                room2On
+                0x0000000000005d76       0x1a ./APP/main.o
+                0x0000000000005d76                room1Off
+ .text.room2On  0x0000000000005d90       0x1a ./APP/main.o
+                0x0000000000005d90                room2On
  .text.room2Off
-                0x000000000000540a       0x1a ./APP/main.o
-                0x000000000000540a                room2Off
- .text.room3On  0x0000000000005424       0x1a ./APP/main.o
-                0x0000000000005424                room3On
+                0x0000000000005daa       0x1a ./APP/main.o
+                0x0000000000005daa                room2Off
+ .text.room3On  0x0000000000005dc4       0x1a ./APP/main.o
+                0x0000000000005dc4                room3On
  .text.room3Off
-                0x000000000000543e       0x1a ./APP/main.o
-                0x000000000000543e                room3Off
+                0x0000000000005dde       0x1a ./APP/main.o
+                0x0000000000005dde                room3Off
  .text.roomOptions
-                0x0000000000005458       0xd8 ./APP/main.o
-                0x0000000000005458                roomOptions
+                0x0000000000005df8       0xd8 ./APP/main.o
+                0x0000000000005df8                roomOptions
  .text.libgcc.mul
-                0x0000000000005530        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_divmodsi4.o)
+                0x0000000000005ed0        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_divmodsi4.o)
  .text.libgcc.div
-                0x0000000000005530       0x2e /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_divmodsi4.o)
-                0x0000000000005530                __divmodsi4
- .text.libgcc   0x000000000000555e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_divmodsi4.o)
+                0x0000000000005ed0       0x2e /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_divmodsi4.o)
+                0x0000000000005ed0                __divmodsi4
+ .text.libgcc   0x0000000000005efe        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_divmodsi4.o)
  .text.libgcc.prologue
-                0x000000000000555e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_divmodsi4.o)
+                0x0000000000005efe        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_divmodsi4.o)
  .text.libgcc.builtins
-                0x000000000000555e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_divmodsi4.o)
+                0x0000000000005efe        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_divmodsi4.o)
  .text.libgcc.fmul
-                0x000000000000555e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_divmodsi4.o)
+                0x0000000000005efe        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_divmodsi4.o)
  .text.libgcc.fixed
-                0x000000000000555e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_divmodsi4.o)
+                0x0000000000005efe        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_divmodsi4.o)
  .text.libgcc.mul
-                0x000000000000555e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_negsi2.o)
+                0x0000000000005efe        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_negsi2.o)
  .text.libgcc.div
-                0x000000000000555e       0x10 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_negsi2.o)
-                0x000000000000555e                __negsi2
- .text.libgcc   0x000000000000556e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_negsi2.o)
+                0x0000000000005efe       0x10 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_negsi2.o)
+                0x0000000000005efe                __negsi2
+ .text.libgcc   0x0000000000005f0e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_negsi2.o)
  .text.libgcc.prologue
-                0x000000000000556e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_negsi2.o)
+                0x0000000000005f0e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_negsi2.o)
  .text.libgcc.builtins
-                0x000000000000556e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_negsi2.o)
+                0x0000000000005f0e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_negsi2.o)
  .text.libgcc.fmul
-                0x000000000000556e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_negsi2.o)
+                0x0000000000005f0e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_negsi2.o)
  .text.libgcc.fixed
-                0x000000000000556e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_negsi2.o)
+                0x0000000000005f0e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_negsi2.o)
  .text.libgcc.mul
-                0x000000000000556e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_exit.o)
+                0x0000000000005f0e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_exit.o)
  .text.libgcc.div
-                0x000000000000556e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_exit.o)
- .text.libgcc   0x000000000000556e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_exit.o)
+                0x0000000000005f0e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_exit.o)
+ .text.libgcc   0x0000000000005f0e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_exit.o)
  .text.libgcc.prologue
-                0x000000000000556e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_exit.o)
+                0x0000000000005f0e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_exit.o)
  .text.libgcc.builtins
-                0x000000000000556e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_exit.o)
+                0x0000000000005f0e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_exit.o)
  .text.libgcc.fmul
-                0x000000000000556e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_exit.o)
+                0x0000000000005f0e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_exit.o)
  .text.libgcc.fixed
-                0x000000000000556e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_exit.o)
+                0x0000000000005f0e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_exit.o)
  .text.libgcc.mul
-                0x000000000000556e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_tablejump2.o)
+                0x0000000000005f0e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_tablejump2.o)
  .text.libgcc.div
-                0x000000000000556e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_tablejump2.o)
- .text.libgcc   0x000000000000556e        0xc /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_tablejump2.o)
-                0x000000000000556e                __tablejump2__
+                0x0000000000005f0e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_tablejump2.o)
+ .text.libgcc   0x0000000000005f0e        0xc /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_tablejump2.o)
+                0x0000000000005f0e                __tablejump2__
  .text.libgcc.prologue
-                0x000000000000557a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_tablejump2.o)
+                0x0000000000005f1a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_tablejump2.o)
  .text.libgcc.builtins
-                0x000000000000557a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_tablejump2.o)
+                0x0000000000005f1a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_tablejump2.o)
  .text.libgcc.fmul
-                0x000000000000557a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_tablejump2.o)
+                0x0000000000005f1a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_tablejump2.o)
  .text.libgcc.fixed
-                0x000000000000557a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_tablejump2.o)
+                0x0000000000005f1a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_tablejump2.o)
  .text.libgcc.mul
-                0x000000000000557a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_copy_data.o)
+                0x0000000000005f1a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_copy_data.o)
  .text.libgcc.div
-                0x000000000000557a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_copy_data.o)
- .text.libgcc   0x000000000000557a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_copy_data.o)
+                0x0000000000005f1a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc   0x0000000000005f1a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_copy_data.o)
  .text.libgcc.prologue
-                0x000000000000557a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_copy_data.o)
+                0x0000000000005f1a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_copy_data.o)
  .text.libgcc.builtins
-                0x000000000000557a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_copy_data.o)
+                0x0000000000005f1a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_copy_data.o)
  .text.libgcc.fmul
-                0x000000000000557a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_copy_data.o)
+                0x0000000000005f1a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_copy_data.o)
  .text.libgcc.fixed
-                0x000000000000557a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_copy_data.o)
+                0x0000000000005f1a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_copy_data.o)
  .text.libgcc.mul
-                0x000000000000557a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_clear_bss.o)
+                0x0000000000005f1a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_clear_bss.o)
  .text.libgcc.div
-                0x000000000000557a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_clear_bss.o)
- .text.libgcc   0x000000000000557a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_clear_bss.o)
+                0x0000000000005f1a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_clear_bss.o)
+ .text.libgcc   0x0000000000005f1a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_clear_bss.o)
  .text.libgcc.prologue
-                0x000000000000557a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_clear_bss.o)
+                0x0000000000005f1a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_clear_bss.o)
  .text.libgcc.builtins
-                0x000000000000557a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_clear_bss.o)
+                0x0000000000005f1a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_clear_bss.o)
  .text.libgcc.fmul
-                0x000000000000557a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_clear_bss.o)
+                0x0000000000005f1a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_clear_bss.o)
  .text.libgcc.fixed
-                0x000000000000557a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_clear_bss.o)
+                0x0000000000005f1a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_clear_bss.o)
  .text.libgcc.mul
-                0x000000000000557a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_udivmodsi4.o)
+                0x0000000000005f1a        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_udivmodsi4.o)
  .text.libgcc.div
-                0x000000000000557a       0x44 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_udivmodsi4.o)
-                0x000000000000557a                __udivmodsi4
- .text.libgcc   0x00000000000055be        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_udivmodsi4.o)
+                0x0000000000005f1a       0x44 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_udivmodsi4.o)
+                0x0000000000005f1a                __udivmodsi4
+ .text.libgcc   0x0000000000005f5e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_udivmodsi4.o)
  .text.libgcc.prologue
-                0x00000000000055be        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_udivmodsi4.o)
+                0x0000000000005f5e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_udivmodsi4.o)
  .text.libgcc.builtins
-                0x00000000000055be        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_udivmodsi4.o)
+                0x0000000000005f5e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_udivmodsi4.o)
  .text.libgcc.fmul
-                0x00000000000055be        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_udivmodsi4.o)
+                0x0000000000005f5e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_udivmodsi4.o)
  .text.libgcc.fixed
-                0x00000000000055be        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_udivmodsi4.o)
+                0x0000000000005f5e        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_udivmodsi4.o)
  .text.avr-libc.fplib
-                0x00000000000055be        0xa /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/libm.a(cmpsf2.o)
-                0x00000000000055be                __lesf2
-                0x00000000000055be                __nesf2
-                0x00000000000055be                __eqsf2
-                0x00000000000055be                __cmpsf2
-                0x00000000000055be                __ltsf2
+                0x0000000000005f5e        0xa /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/libm.a(cmpsf2.o)
+                0x0000000000005f5e                __lesf2
+                0x0000000000005f5e                __nesf2
+                0x0000000000005f5e                __eqsf2
+                0x0000000000005f5e                __cmpsf2
+                0x0000000000005f5e                __ltsf2
  .text.avr-libc.fplib
-                0x00000000000055c8       0x5e /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/libm.a(fixunssfsi.o)
-                0x00000000000055c8                __fixunssfsi
+                0x0000000000005f68       0x5e /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/libm.a(fixunssfsi.o)
+                0x0000000000005f68                __fixunssfsi
  .text.avr-libc.fplib
-                0x0000000000005626       0x48 /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/libm.a(fp_cmp.o)
-                0x0000000000005626                __fp_cmp
+                0x0000000000005fc6       0x48 /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/libm.a(fp_cmp.o)
+                0x0000000000005fc6                __fp_cmp
  .text.avr-libc.fplib
-                0x000000000000566e       0x44 /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/libm.a(fp_split3.o)
-                0x000000000000566e                __fp_split3
-                0x000000000000567e                __fp_splitA
+                0x000000000000600e       0x44 /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/libm.a(fp_split3.o)
+                0x000000000000600e                __fp_split3
+                0x000000000000601e                __fp_splitA
  .text.avr-libc.fplib
-                0x00000000000056b2        0xe /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/libm.a(fp_zero.o)
-                0x00000000000056b2                __fp_zero
-                0x00000000000056b4                __fp_szero
+                0x0000000000006052        0xe /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/libm.a(fp_zero.o)
+                0x0000000000006052                __fp_zero
+                0x0000000000006054                __fp_szero
  .text.avr-libc.fplib
-                0x00000000000056c0        0xa /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/libm.a(gesf2.o)
-                0x00000000000056c0                __gtsf2
-                0x00000000000056c0                __gesf2
+                0x0000000000006060        0xa /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/libm.a(gesf2.o)
+                0x0000000000006060                __gtsf2
+                0x0000000000006060                __gesf2
  .text.avr-libc.fplib
-                0x00000000000056ca        0x8 /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/libm.a(mulsf3.o)
-                0x00000000000056ca                __mulsf3
+                0x000000000000606a        0x8 /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/libm.a(mulsf3.o)
+                0x000000000000606a                __mulsf3
  .text.avr-libc.fplib
-                0x00000000000056d2       0xd2 /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/libm.a(mulsf3x.o)
-                0x00000000000056f0                __mulsf3x
-                0x00000000000056f6                __mulsf3_pse
+                0x0000000000006072       0xd2 /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/libm.a(mulsf3x.o)
+                0x0000000000006090                __mulsf3x
+                0x0000000000006096                __mulsf3_pse
  .text.avr-libc.fplib
-                0x00000000000057a4        0xc /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/libm.a(fp_inf.o)
-                0x00000000000057a4                __fp_inf
+                0x0000000000006144        0xc /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/libm.a(fp_inf.o)
+                0x0000000000006144                __fp_inf
  .text.avr-libc.fplib
-                0x00000000000057b0        0x6 /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/libm.a(fp_nan.o)
-                0x00000000000057b0                __fp_nan
+                0x0000000000006150        0x6 /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/libm.a(fp_nan.o)
+                0x0000000000006150                __fp_nan
  .text.avr-libc.fplib
-                0x00000000000057b6        0xe /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/libm.a(fp_pscA.o)
-                0x00000000000057b6                __fp_pscA
+                0x0000000000006156        0xe /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/libm.a(fp_pscA.o)
+                0x0000000000006156                __fp_pscA
  .text.avr-libc.fplib
-                0x00000000000057c4        0xe /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/libm.a(fp_pscB.o)
-                0x00000000000057c4                __fp_pscB
+                0x0000000000006164        0xe /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/libm.a(fp_pscB.o)
+                0x0000000000006164                __fp_pscB
  .text.avr-libc.fplib
-                0x00000000000057d2       0x22 /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/libm.a(fp_round.o)
-                0x00000000000057d2                __fp_round
-                0x00000000000057f4                . = ALIGN (0x2)
+                0x0000000000006172       0x22 /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/libm.a(fp_round.o)
+                0x0000000000006172                __fp_round
+                0x0000000000006194                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000000000057f4        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_exit.o)
-                0x00000000000057f4                exit
-                0x00000000000057f4                _exit
+ .fini9         0x0000000000006194        0x0 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_exit.o)
+                0x0000000000006194                exit
+                0x0000000000006194                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -558,19 +558,19 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000000000057f4        0x4 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_exit.o)
+ .fini0         0x0000000000006194        0x4 /usr/lib/gcc/avr/12.1.0/avr5/libgcc.a(_exit.o)
  *(.fini0)
  *(.hightext)
  *(.hightext*)
  *(.progmemx.*)
-                0x00000000000057f8                . = ALIGN (0x2)
+                0x0000000000006198                . = ALIGN (0x2)
  *(.jumptables)
  *(.jumptables*)
  .jumptables.gcc.STEPPER_HalfStep
-                0x00000000000057f8       0x1a ./HAL/STEPPER/STEPPER_PROGRAM.o
-                0x0000000000005812                _etext = .
+                0x0000000000006198       0x1a ./HAL/STEPPER/STEPPER_PROGRAM.o
+                0x00000000000061b2                _etext = .
 
-.data           0x0000000000800060       0xd6 load address 0x0000000000005812
+.data           0x0000000000800060       0xd6 load address 0x00000000000061b2
                 0x0000000000800060                PROVIDE (__data_start = .)
  *(.data)
  .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/crtatmega32.o
@@ -618,7 +618,7 @@ END GROUP
                 0x0000000000800136                _edata = .
                 0x0000000000800136                PROVIDE (__data_end = .)
 
-.bss            0x0000000000800136        0xa
+.bss            0x0000000000800136        0xb
                 0x0000000000800136                PROVIDE (__bss_start = .)
  *(.bss)
  .bss           0x0000000000800136        0x0 /usr/lib/gcc/avr/12.1.0/../../../../avr/lib/avr5/crtatmega32.o
@@ -652,19 +652,22 @@ END GROUP
  *(.bss*)
  .bss.INT_CallBack
                 0x0000000000800136        0x6 ./MCAL/EXTI/EXTI_PROGRAM.o
+ .bss.init_flag
+                0x000000000080013c        0x1 ./HAL/LCD/LCD_PROGRAM.o
+                0x000000000080013c                init_flag
  .bss.savedpass3
-                0x000000000080013c        0x4 ./APP/main.o
-                0x000000000080013c                savedpass3
+                0x000000000080013d        0x4 ./APP/main.o
+                0x000000000080013d                savedpass3
  *(COMMON)
-                0x0000000000800140                PROVIDE (__bss_end = .)
-                0x0000000000005812                __data_load_start = LOADADDR (.data)
-                0x00000000000058e8                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x0000000000800141                PROVIDE (__bss_end = .)
+                0x00000000000061b2                __data_load_start = LOADADDR (.data)
+                0x0000000000006288                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0000000000800140        0x0
+.noinit         0x0000000000800141        0x0
                 [!provide]                        PROVIDE (__noinit_start = .)
  *(.noinit .noinit.* .gnu.linkonce.n.*)
                 [!provide]                        PROVIDE (__noinit_end = .)
-                0x0000000000800140                _end = .
+                0x0000000000800141                _end = .
                 [!provide]                        PROVIDE (__heap_start = .)
 
 .eeprom         0x0000000000810000        0x0
@@ -683,7 +686,7 @@ END GROUP
 .signature
  *(.signature*)
 
-.stab           0x0000000000000000     0x489c
+.stab           0x0000000000000000     0x5010
  *(.stab)
  .stab          0x0000000000000000       0xb4 ./MCAL/GIE/GIE_PROGRAM.o
  .stab          0x00000000000000b4      0x3a8 ./MCAL/EXTI/EXTI_PROGRAM.o
@@ -692,16 +695,16 @@ END GROUP
                                         0x6b4 (size before relaxing)
  .stab          0x0000000000000b04     0x1200 ./HAL/STEPPER/STEPPER_PROGRAM.o
                                        0x120c (size before relaxing)
- .stab          0x0000000000001d04      0xbd0 ./HAL/LCD/LCD_PROGRAM.o
-                                        0xbdc (size before relaxing)
- .stab          0x00000000000028d4      0x21c ./HAL/KPD/KPD_PROGRAM.o
+ .stab          0x0000000000001d04     0x1320 ./HAL/LCD/LCD_PROGRAM.o
+                                       0x132c (size before relaxing)
+ .stab          0x0000000000003024      0x21c ./HAL/KPD/KPD_PROGRAM.o
                                         0x228 (size before relaxing)
- .stab          0x0000000000002af0     0x1dac ./APP/main.o
-                                       0x1db8 (size before relaxing)
+ .stab          0x0000000000003240     0x1dd0 ./APP/main.o
+                                       0x1ddc (size before relaxing)
 
-.stabstr        0x0000000000000000      0xd55
+.stabstr        0x0000000000000000      0xd70
  *(.stabstr)
- .stabstr       0x0000000000000000      0xd55 ./MCAL/GIE/GIE_PROGRAM.o
+ .stabstr       0x0000000000000000      0xd70 ./MCAL/GIE/GIE_PROGRAM.o
 
 .stab.excl
  *(.stab.excl)
