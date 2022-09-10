@@ -15,7 +15,7 @@
 u32 savedpass1 = 1111;
 u32 savedpass2 = 2222;
 u32 savedpass3 = 0000;
-
+static u8 state = 1;
 void openDoor(void)
 {
 
@@ -39,6 +39,7 @@ void closeDoor(void)
 void openFan(void)
 {
 
+	state = 1;
 	u16 Local_AnaloglValue,Local_DigitalValue;
 	DIO_SetPinDirection(PORTA,0,DIO_INPUT);
 	MADC_voidInit();
@@ -61,7 +62,8 @@ void openFan(void)
 }
 void closeFan(void)
 {
-
+	state = 0;
+	PWM_CTC_VALUE(0);
 }
 
 u8 Login(void)
@@ -147,7 +149,7 @@ u8 Login(void)
 	}
 	default :
 		LCD_WriteString("Wrong Option");
-		_delay_ms(100);
+		_delay_ms(700);
 		return 0 ;
 	}
 
@@ -296,6 +298,7 @@ void options(void)
 	default:
 	{
 		LCD_WriteString(" Wrong Option");
+		_delay_ms(700);
 		LCD_WriteCommand(clear);
 		options();
 	}
@@ -415,7 +418,7 @@ void roomOptions(void)
 void rigthPass(void)
 {
 	LCD_WriteString(" Right Pass");
-	_delay_ms(1000);
+	_delay_ms(500);
 	LCD_WriteCommand(clear);
 
 }
@@ -424,7 +427,7 @@ void rigthPass(void)
 void WrongPass(void)
 {
 	LCD_WriteString(" Wrong Pass");
-	_delay_ms(1000);
+	_delay_ms(500);
 	LCD_WriteCommand(clear);
 
 }
@@ -469,8 +472,8 @@ void ControlFan(void)
 
 	Local_DigitalValue = MADC_u8StartConversion(0);
 	Local_AnaloglValue = (Local_DigitalValue * 5000UL)/1024;
-
-	if(Local_AnaloglValue>430)
+	//u8 s = stateShow(PORTA ,0);
+	if(Local_AnaloglValue>430 && state!=0 )
 	{
 		TIMER1_INT();
 		PWM_INIT_FAST();
