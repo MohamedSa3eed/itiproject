@@ -15,7 +15,7 @@
 
 #ifndef APP_INTERFACE_H_
 #define APP_INTERFACE_H_
-
+u8 stateShow(u8 PORT ,u8 PIN);
 void openDoor(void);
 void openFan(void);
 u8 getOption(void);

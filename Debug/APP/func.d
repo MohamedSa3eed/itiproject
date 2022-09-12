@@ -1,4 +1,4 @@
-APP/main.o APP/main.o: ../APP/main.c ../APP/interface.h ../APP/config.h \
+APP/func.o APP/func.o: ../APP/func.c ../APP/interface.h ../APP/config.h \
   ../APP/../MCAL/DIO/DIO_INTERFACE.h \
   ../APP/../MCAL/DIO/../../LIB/STD_TYPES.h \
   ../APP/../MCAL/DIO/../../LIB/BIT_MATH.h \

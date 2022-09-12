@@ -8,14 +8,8 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include MCAL/TIMER/subdir.mk
--include MCAL/PWM/subdir.mk
--include MCAL/GI/subdir.mk
--include MCAL/EXT/subdir.mk
 -include MCAL/DIO/subdir.mk
--include MCAL/ADC/subdir.mk
 -include HAL/LCD/subdir.mk
--include HAL/KEYPAD/subdir.mk
 -include APP/subdir.mk
 -include subdir.mk
 -include objects.mk
@@ -44,6 +38,9 @@ LCD.lss \
 FLASH_IMAGE += \
 LCD.hex \
 
+EEPROM_IMAGE += \
+LCD.eep \
+
 SIZEDUMMY += \
 sizedummy \
 
@@ -71,6 +68,12 @@ LCD.hex: LCD.elf
 	@echo 'Finished building: $@'
 	@echo ' '
 
+LCD.eep: LCD.elf
+	@echo 'Create eeprom image (ihex format)'
+	-avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex LCD.elf  "LCD.eep"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 sizedummy: LCD.elf
 	@echo 'Invoking: Print Size'
 	-avr-size --format=avr --mcu=atmega32 LCD.elf
@@ -79,10 +82,10 @@ sizedummy: LCD.elf
 
 # Other Targets
 clean:
-	-$(RM) $(FLASH_IMAGE)$(ELFS)$(OBJS)$(ASM_DEPS)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS)$(LSS)$(C_DEPS) LCD.elf
+	-$(RM) $(FLASH_IMAGE)$(ELFS)$(OBJS)$(ASM_DEPS)$(EEPROM_IMAGE)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS)$(LSS)$(C_DEPS) LCD.elf
 	-@echo ' '
 
-secondary-outputs: $(LSS) $(FLASH_IMAGE) $(SIZEDUMMY)
+secondary-outputs: $(LSS) $(FLASH_IMAGE) $(EEPROM_IMAGE) $(SIZEDUMMY)
 
 .PHONY: all clean dependents
 .SECONDARY:

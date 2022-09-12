@@ -2,7 +2,7 @@
 #define  GI_INTERFACE_H
 
 void GI_Enable(void);
-void GI_Disable(void);
+void GI_DisEnable(void);
 
 
 #endif
